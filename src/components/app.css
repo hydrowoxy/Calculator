@@ -1,13 +1,13 @@
 .gradient-text {
-    background: linear-gradient(45deg, #6997d6, #e986c6);
+    background: linear-gradient(45deg, #728cff, #5cd06d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.3; 
   }
 
   ::selection {
-    background-color: #acd5e2; /* Red color as an example */
-    color: #fff; /* Text color for the selected text */
+    background-color: #08090f; /* Red color as an example */
+    color: #90a4fa; /* Text color for the selected text */
   }
 
   body {

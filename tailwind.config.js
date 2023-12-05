@@ -8,10 +8,12 @@ module.exports = {
         current: 'currentColor',
         'white': '#ffffff',
         'lightgray': '#f8f8fb',
-        'blue': '#5077e0',
-        'pink': '#c99dcb',
+        'blue': '#4486f0',
+        'lightblue': '#90a4fa',
         'lightpurple': '#c4c9e4',
-        'gray': '#3c3b3f',
+        'green':'#86dc96',
+        'darkgreen': '#56B664',
+        'gray': '#08090f', //it's not gray LOL
         'teal':'#acd5e2',
       }
     },

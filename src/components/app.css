@@ -9,3 +9,7 @@
     background-color: #acd5e2; /* Red color as an example */
     color: #fff; /* Text color for the selected text */
   }
+
+  body {
+    background-color:#f8f8fb;
+  }

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Calc1 from "./components/Calc1";
-import IntegralCalculator from "./components/calc1f/IntegralCalculator";
+import IntegralCalculator from "./calc1f/IntegralCalculator";
 import Calc2 from "./components/Calc2";
 import Calc3 from "./components/Calc3";
 import Discrete from "./components/Discrete";

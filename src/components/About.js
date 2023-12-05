@@ -43,7 +43,9 @@ export default function About() {
           </h1>
           <p className="text-lg text-gray mt-10 leading-relaxed">
             <span className="text-2xl">
-              Some calculators for various math and computer science courses.
+              The goal is to allow the user to enter mathematical expressions into the
+              browser which will be formatted and displayed in real-time using MathJax, then parsed using the shunting-yard algorithm
+              and finally sent to maxima to compute.
             </span>
           </p>
           </div>

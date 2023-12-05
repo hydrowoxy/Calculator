@@ -1,15 +1,12 @@
 const text = [
-    "wow typing ....",
-    "hello there!!",
-    "hi",
-    "words",
-    "mmm"
+    "Some calculators for various math and computer science courses.",
+    "Some calculators for various math and computer science courses."
 ];
 
 const typingSpeed = 50; // Adjust the typing speed (milliseconds per character)
 const pauseDuration = 2000; // Adjust the pause duration between animations (milliseconds)
 const prefix = "| "; // Use a . as the prefix
-const prefixColor = "#5077e0"; // Set the color for the prefix
+const prefixColor = "#f8f8fb"; // Set the color for the prefix
 const textColor = "#3c3b3f"; // Set the color for the remaining text
 
 function startTypingAnimation() {

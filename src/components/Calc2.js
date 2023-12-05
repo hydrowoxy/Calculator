@@ -1,4 +1,3 @@
-// src/components/Calc1.js
 import React from "react";
 import "./app.css";
 
@@ -13,12 +12,12 @@ export default function Calc2() {
           <div className="flex justify-center pt-10">
             <a
               href="./"
-              className="inline-flex text-white bg-gray border-0 pt py-4 px-9 focus:outline-none hover:text-pink text-lg rounded">
+              className="inline-flex text-gray bg-white py-4 px-9 hover:text-darkgreen hover:underline text-lg rounded shadow-md hover:shadow-md mr-10">
               Integral Calculator
             </a>
             <a
               href="#projects"
-              className="ml-4 inline-flex text-white bg-gray border-0 py-4 px-9 focus:outline-none hover:text-pink text-lg rounded">
+              className="inline-flex text-gray bg-white py-4 px-9 hover:text-darkgreen hover:underline text-lg rounded shadow-md hover:shadow-md">
               Derivative Calculator
             </a>
           </div>

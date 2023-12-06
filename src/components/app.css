@@ -6,8 +6,8 @@
   }
 
   ::selection {
-    background-color: #08090f; /* Red color as an example */
-    color: #90a4fa; /* Text color for the selected text */
+    background-color: #08090f; 
+    color: #90a4fa; 
   }
 
   body {

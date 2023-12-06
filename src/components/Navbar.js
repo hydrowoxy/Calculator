@@ -25,7 +25,7 @@ export default function Navbar() {
           </a>
         </nav>
         <a
-          href="./Salma_Baig_Software_Resume_2023.pdf"
+          href=""
           className="inline-flex items-center bg-white border-0 py-1 px-3 focus:outline-none hover:bg-pink text-pink hover:text-white rounded mt-4 md:mt-0"
         >
           How do these work?

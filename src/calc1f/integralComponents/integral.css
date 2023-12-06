@@ -1,0 +1,6 @@
+.integral .gradient-text {
+    background: linear-gradient(45deg, #fe8dc6, #fed1c7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.3; 
+  }

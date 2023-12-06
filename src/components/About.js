@@ -32,7 +32,7 @@ export default function About() {
     <section id="projects" className="bg-lightgray mt-20 body-font">
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full mb-20">
-        <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-20 text-gray">
+        <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-20 text-navy">
             About This Site
           </h1>
         <h1 className="sm:text-7xl text-3xl font-medium title-font mb-5 gradient-text">
@@ -41,11 +41,11 @@ export default function About() {
         <h1 className="sm:text-1xl text-3xl font-medium title-font mb-5 text-black">
             <span className="main-text typing-text"></span>
           </h1>
-          <p className="text-lg text-gray mt-10 leading-relaxed">
+          <p className="text-lg text-navy mt-10 leading-relaxed">
             <span className="text-2xl">
               The goal is to allow the user to enter mathematical expressions into the
-              browser which will be formatted and displayed in real-time using MathJax, then parsed using the shunting-yard algorithm
-              and finally sent to maxima to compute.
+              browser which will be formatted and displayed in real-time using the
+              shunting-yard algorithm and MathJax, then finally sent to maxima to compute.
             </span>
           </p>
           </div>

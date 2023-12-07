@@ -63,15 +63,16 @@ export default function Input() {
                             <h1 className="sm:text-2xl text-3xl font-medium text-left title-font mt-10 mb-4 text-navy">
                                 Specifications...
                             </h1>
+
                             <div className="mb-4">
-                                <label htmlFor="variable" className="mr-2">
+                                <label htmlFor="variable" className="mr-2 text-lg text-navy">
                                     Variable:
                                 </label>
                                 <select
                                     id="variable"
                                     value={variable}
                                     onChange={handleVariableChange}
-                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:border-blue-500"
+                                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:border-integraldark focus:ring-2 focus:ring-integraldark"
                                 >
                                     {Array.from(alphabet).map((letter) => (
                                         <option key={letter} value={letter.toLowerCase()}>
@@ -80,8 +81,9 @@ export default function Input() {
                                     ))}
                                 </select>
                             </div>
+
                             <div className="mb-4">
-                                <label htmlFor="lowerBound" className="mr-2">
+                                <label htmlFor="lowerBound" className="mr-2 text-lg text-navy">
                                     Lower Bound:
                                 </label>
                                 <input
@@ -109,7 +111,7 @@ export default function Input() {
                                 </button>
                             </div>
                             <div className="mb-4">
-                                <label htmlFor="upperBound" className="mr-2">
+                                <label htmlFor="upperBound" className="mr-2 text-lg text-navy">
                                     Upper Bound:
                                 </label>
                                 <input
@@ -144,7 +146,7 @@ export default function Input() {
                                 Take the integral of...
                             </h1>
                             <div className="mb-4">
-                                <label htmlFor="mathFunction" className="mr-2">
+                                <label htmlFor="mathFunction" className="mr-2 text-lg text-navy">
                                     Function to integrate:
                                 </label>
                                 <input

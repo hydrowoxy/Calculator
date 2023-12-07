@@ -23,9 +23,12 @@ export default function Navbar() {
           <a href="#Discrete" className="mr-5 hover:bg-lightgray rounded mt-4 md:mt-0 px-2 py-1 hover:text-pink">
             Discrete Math
           </a>
+          <a href="#Tex" className="mr-5 hover:bg-lightgray rounded mt-4 md:mt-0 px-2 py-1 hover:text-pink">
+            LaTeX Editor
+          </a>
         </nav>
         <a
-          href="./Salma_Baig_Software_Resume_2023.pdf"
+          href=""
           className="inline-flex items-center bg-white border-0 py-1 px-3 focus:outline-none hover:bg-pink text-pink hover:text-white rounded mt-4 md:mt-0"
         >
           How do these work?

@@ -1,9 +1,6 @@
 
-import React, { useState, useEffect } from "react";
-import { Node, Context } from 'react-mathjax2';
+import React, { useState } from "react";
 import "./integral.css";
-
-const MathJax = require("react-mathjax2").default;
 
 export default function Input() {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -12,11 +9,6 @@ export default function Input() {
     const [lowerBound, setLowerBound] = useState("");
     const [upperBound, setUpperBound] = useState("");
     const [mathFunction, setMathFunction] = useState("");
-
-    useEffect(() => {
-        // Ensure MathJax updates when the component is mounted or when the variables change
-        MathJax.typeset();
-    }, [lowerBound, upperBound, mathFunction, variable]);
 
     const handleVariableChange = (e) => {
         setVariable(e.target.value);
@@ -175,9 +167,6 @@ export default function Input() {
             <h1 className="sm:text-2xl text-3xl font-medium text-center title-font mt-10 mb-4 text-navy">
               Integral Expression
             </h1>
-            <Context input="tex">
-              <Node formula={`\\int_{${lowerBound}}^{${upperBound}} ${mathFunction} d${variable}`} />
-            </Context>
           </div>
         </div>
       </section>

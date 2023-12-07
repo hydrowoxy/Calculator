@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
+import { Node, Context } from 'react-mathjax2';
 import "./integral.css";
+
+const MathJax = require("react-mathjax2").default;
 
 export default function Input() {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -7,7 +11,12 @@ export default function Input() {
     const [variable, setVariable] = useState("x");
     const [lowerBound, setLowerBound] = useState("");
     const [upperBound, setUpperBound] = useState("");
-    const [mathFunction, setMathFunction] = useState(""); 
+    const [mathFunction, setMathFunction] = useState("");
+
+    useEffect(() => {
+        // Ensure MathJax updates when the component is mounted or when the variables change
+        MathJax.typeset();
+    }, [lowerBound, upperBound, mathFunction, variable]);
 
     const handleVariableChange = (e) => {
         setVariable(e.target.value);
@@ -56,7 +65,7 @@ export default function Input() {
                     <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-4 text-navy">
                         Input
                     </h1>
-                    <div className="grid grid-cols-2 gap-4 w-full mb-20">
+                    <div className="grid grid-cols-2 gap-4 w-full mb-10">
                         {/* Left side - Variable, Lower Bound, and Upper Bound */}
                         <div className="text-left">
                             <h1 className="sm:text-2xl text-3xl font-medium text-left title-font mt-10 mb-4 text-navy">
@@ -91,9 +100,21 @@ export default function Input() {
                                     placeholder="From..."
                                     className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-integraldark focus:ring-2 focus:ring-integraldark"
                                 />
-                                <button onClick={setLowerBoundToInfinity} className="ml-2 mr-2">+∞</button>
-                                <button onClick={setLowerBoundToNegInfinity} className="mr-2">-∞</button>
-                                <button onClick={handleClearLowerBound} className="mr-2">Clear</button>
+                                <button
+                                    onClick={setLowerBoundToInfinity}
+                                    className="ml-2 mr-2"
+                                >
+                                    +∞
+                                </button>
+                                <button
+                                    onClick={setLowerBoundToNegInfinity}
+                                    className="mr-2"
+                                >
+                                    -∞
+                                </button>
+                                <button onClick={handleClearLowerBound} className="mr-2">
+                                    Clear
+                                </button>
                             </div>
                             <div className="mb-4">
                                 <label htmlFor="upperBound" className="mr-2">
@@ -107,9 +128,21 @@ export default function Input() {
                                     placeholder="To..."
                                     className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-integraldark focus:ring-2 focus:ring-integraldark"
                                 />
-                                <button onClick={setUpperBoundToInfinity} className="ml-2 mr-2">+∞</button>
-                                <button onClick={setUpperBoundToNegInfinity} className="mr-2">-∞</button>
-                                <button onClick={handleClearUpperBound} className="mr-2">Clear</button>
+                                <button
+                                    onClick={setUpperBoundToInfinity}
+                                    className="ml-2 mr-2"
+                                >
+                                    +∞
+                                </button>
+                                <button
+                                    onClick={setUpperBoundToNegInfinity}
+                                    className="mr-2"
+                                >
+                                    -∞
+                                </button>
+                                <button onClick={handleClearUpperBound} className="mr-2">
+                                    Clear
+                                </button>
                             </div>
                         </div>
 
@@ -136,8 +169,18 @@ export default function Input() {
                     <p>
                         Variable: {variable}, Lower Bound: {lowerBound}, Upper Bound: {upperBound}, Mathematical Expression: {mathFunction}
                     </p>
-                </div>
-            </section>
+
+                    {/* Additional Section - Display Integral Expression */}
+                    <div className="text-center">
+            <h1 className="sm:text-2xl text-3xl font-medium text-center title-font mt-10 mb-4 text-navy">
+              Integral Expression
+            </h1>
+            <Context input="tex">
+              <Node formula={`\\int_{${lowerBound}}^{${upperBound}} ${mathFunction} d${variable}`} />
+            </Context>
+          </div>
         </div>
-    );
+      </section>
+    </div>
+  );
 }

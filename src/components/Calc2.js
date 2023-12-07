@@ -21,7 +21,7 @@ export default function Calc2() {
               Derivative Calculator
             </a>
           </div>
-        </div> 
+        </div>
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ export default function Calc1() {
               Integral Calculator
             </a>
           </div>
-        </div> 
+        </div>
       </div>
     </section>
   );

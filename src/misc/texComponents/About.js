@@ -14,7 +14,7 @@ export default function About() {
                         <h1 className="sm:text-7xl text-3xl font-medium title-font gradient-text">
                             Basic LaTeX Editor
                         </h1>
-                        <p className="text-lg text-navy mt-7 leading-relaxed">
+                        <p className="text-lg text-navy mt-7 mb-10 leading-relaxed">
                             <span className="text-2xl">
                                 A basic LaTeX editor. You can type a short amount of LaTeX code and get a nicely formatted expression in the browser.
                                 See the {" "}

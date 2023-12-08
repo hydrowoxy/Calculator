@@ -1,12 +1,69 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./tex.css";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
+import { buttonData } from "./buttonData";
+import { toPng } from 'html-to-image';
+
+const tabData = [
+  { id: 'basic', title: 'Basic', buttons: buttonData.basic },
+  { id: 'calculus', title: 'Calculus', buttons: buttonData.calculus },
+  { id: 'arrows', title: 'Arrows', buttons: buttonData.arrows },
+  { id: 'alphabetic', title: 'Alphabetic', buttons: buttonData.alphabetic },
+  { id: 'functions', title: 'Functions', buttons: buttonData.functions },
+  { id: 'fonts', title: 'Fonts', buttons: buttonData.fonts },
+  { id: 'discrete', title: 'Discrete', buttons: buttonData.discrete },
+  { id: 'formulas', title: 'Formulas', buttons: buttonData.formulas },
+];
 
 export default function Editor() {
-  const [latexCode, setLatexCode] = useState("\\int_{a}^{b} sin(x^2) dx ");
+  const [latexCode, setLatexCode] = useState("\\int_{a}^{b} \\sin(x^2) dx ");
+  const [activeTab, setActiveTab] = useState("basic");
+  const mathjaxContainerRef = useRef(null);
 
   const handleLatexCodeChange = (event) => {
     setLatexCode(event.target.value);
+  };
+
+  const handleButtonClick = (symbol) => {
+    const inputElement = document.getElementById('latexCode');
+    const startPos = inputElement.selectionStart;
+    const endPos = inputElement.selectionEnd;
+
+    // Insert the symbol with spaces on either side at the cursor position
+    const newLatexCode =
+      latexCode.substring(0, startPos) + ' ' + symbol + ' ' + latexCode.substring(endPos);
+
+    // Update the state with the new LaTeX code
+    setLatexCode(newLatexCode);
+
+    // Move the cursor to the end of the inserted symbol
+    const newCursorPos = startPos + symbol.length + 2; // +2 for the added spaces
+    inputElement.setSelectionRange(newCursorPos, newCursorPos);
+
+    // Focus back on the input field
+    inputElement.focus();
+  };
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
+  const handleDownloadImage = () => {
+    // Use toPng to convert the MathJax container to PNG
+    toPng(mathjaxContainerRef.current)
+      .then((dataUrl) => {
+        // Create a temporary link to download the PNG
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'latex_image.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      })
+      .catch((error) => {
+        console.error('Error generating PNG:', error);
+        window.alert('Error generating PNG. Please try again.'); 
+      });
   };
 
   return (
@@ -18,27 +75,81 @@ export default function Editor() {
               <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-8 mt-10 text-navy">
                 Basic LaTeX Editor
               </h1>
+
               {/* Input field for LaTeX code */}
-              <div className="text-left mb-4">
-                <label htmlFor="latexCode" className="mr-2 text-lg text-navy">
-                  Enter LaTeX Code:
-                </label>
+              <p className="text-lg text-navy text-left mt-5 mb-4 ml-1 leading-relaxed">
+                <span className="text-2xl">
+                  Enter LaTeX code...
+                </span>
+              </p>
+              <div className="text-left flex items-center text-2xl">
                 <input
                   type="text"
                   id="latexCode"
                   name="latexCode"
                   value={latexCode}
                   onChange={handleLatexCodeChange}
-                  className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-texlight focus:ring-2 focus:ring-texlight w-full"
+                  className="border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-texlight focus:ring-2 focus:ring-texlight w-full"
                 />
               </div>
-              {/* Display MathJax expression */}
-              <div className="rounded-lg overflow-hidden bg-white p-4 shadow-lg">
+
+              {/* Tabs */}
+              <div className="justify-center mb-4 mt-10 flex space-x-4">
+                {tabData.map((tab) => (
+                  <button
+                    key={tab.id}
+                    className={`bg-white text-md text-navy px-4 py-2 rounded-md ${activeTab === tab.id ? 'bg-texlight text-white' : ''}`}
+                    onClick={() => handleTabChange(tab.id)}
+                  >
+                    {tab.title}
+                  </button>
+                ))}
+              </div>
+
+              {/* Buttons for inserting symbols based on the active tab */}
+              <div className="flex justify-center text-center px-4">
+                {/* Buttons for inserting symbols based on the active tab */}
+                <div className="flex flex-wrap space-x-4 mb-4 mt-4">
+                  {tabData.map((tab) => (
+                    activeTab === tab.id && tab.buttons && (
+                      tab.buttons.map((button, index) => (
+                        <React.Fragment key={button.id}>
+                          <button
+                            className={`bg-white ring-2 text-navy ring-gray-200 focus:outline-none focus:border-texdark focus:ring-2 focus:ring-texdark text-sm focus:text-texdark mt-4 mb-8 px-6 py-0 rounded-md`}
+                            onClick={() => handleButtonClick(button.latex)}
+                          >
+                            <div className="flex items-center justify-center" style={{ height: "100%" }}>
+                              <MathJax className="text-xl text-navy">{button.icon}</MathJax>
+                            </div>
+                          </button>
+                          {(index + 1) % 20 === 0 && <br />}
+                        </React.Fragment>
+                      ))
+                    )
+                  ))}
+                </div>
+              </div>
+
+
+              {/* Display the TeX with MathJax */}
+              <div
+                ref={mathjaxContainerRef}
+                className="rounded-lg overflow-hidden bg-white p-4 shadow-lg flex items-center justify-center"
+                style={{ height: "200px" }}
+              >
                 <MathJax
                   className="text-3xl text-navy"
-                  style={{ width: "100%", minHeight: "80px" }}
+                  style={{ width: "100%" }}
                 >{`\\[${latexCode}\\]`}</MathJax>
               </div>
+
+              {/* Download button */}
+              <button
+                className="bg-texlight text-navy hover:underline px-4 py-2 rounded-md mt-12"
+                onClick={handleDownloadImage}
+              >
+                Download as PNG
+              </button>
             </div>
           </div>
         </section>

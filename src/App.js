@@ -8,6 +8,7 @@ import IntegralCalculator from "./calc1f/IntegralCalculator";
 import Calc2 from "./components/Calc2";
 import Calc3 from "./components/Calc3";
 import Discrete from "./components/Discrete";
+import DigitalLogic from "./components/DigitalLogic";
 import Misc from "./components/Misc";
 import Tex from "./misc/Tex";
 import Footer from "./components/Footer";
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/calc3" element={<Calc3 />} />
         <Route path="/discrete" element={<Discrete />} />
         <Route path="/misc/tex" element={<Tex />} />
+        <Route path="/digitallogic" element={<DigitalLogic />} />
       </Routes>
       <Footer />
     </Router>
@@ -45,6 +47,7 @@ function LandingPageContent() {
       <Calc2 />
       <Calc3 />
       <Discrete />
+      <DigitalLogic />
       <Misc />
     </section>
   );

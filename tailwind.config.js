@@ -19,7 +19,10 @@ module.exports = {
         'integrallight':'#fed1c7',
 
         'texdark':'#ef4136',
-        'texlight':'#fbb040'
+        'texlight':'#fbb040',
+
+        'binarydark':'#00a1ff',
+        'binarylight':'#00ff8f'
       }
     },
   },

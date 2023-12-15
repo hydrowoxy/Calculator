@@ -23,14 +23,8 @@ export default function About() {
                             </span>
                         </p>
                         <div>
-                            <span style={{ fontSize: "1.4rem" }}>Visit </span>
-                            <a
-                                href="https://integral-calculator.com"
-                                className="text-integraldark underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ fontSize: "1.4rem" }}
-                            >
+                            <span style={{ fontSize: "1.5rem" }}  className="text-navy">Visit </span>
+                            <a href="https://integral-calculator.com" className="text-integraldark underline" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.5rem" }}>
                                 integral-calculator.com
                             </a>
                             <span style={{ fontSize: "1.4rem" }}>!</span>

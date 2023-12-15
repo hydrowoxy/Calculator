@@ -22,7 +22,7 @@ export default function About() {
               </p>
               <p>
                 <span className="text-2xl">
-                  Manual subtraction can be accomplished using the <a href="https://en.wikipedia.org/wiki/Two%27s_complement" className="text-binarydark underline" target="_blank" rel="noopener noreferrer">
+                  Wanted to subtract? Manual subtraction can be accomplished using the <a href="https://en.wikipedia.org/wiki/Two%27s_complement" className="text-binarydark underline" target="_blank" rel="noopener noreferrer">
                   2's complement method.</a> To accomplish \(A - B\), you start with the positive binary
                   representation of \(B\), turn it negative using the 2's complement of it, and then add negative \(B\) to \(A\). To illustrate the idea, it is like viewing
                   \(10 - 5\) as \(10 + (-5)\). The <a href="https://en.wikipedia.org/wiki/Signed_number_representations" className="text-binarydark underline" target="_blank" rel="noopener noreferrer">

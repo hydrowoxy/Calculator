@@ -53,7 +53,7 @@
   }
 
 /* Style for the dropdowns */
-select {
+.binaryadd select {
   appearance: none;
   background-color: white;
   border: 2px solid #08090f; /* Blue color */
@@ -70,6 +70,6 @@ select {
 }
 
 /* Style for the dropdown arrow */
-select::-ms-expand {
+.binaryadd select::-ms-expand {
   display: none;
 }

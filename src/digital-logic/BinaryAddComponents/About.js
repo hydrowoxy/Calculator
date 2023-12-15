@@ -1,5 +1,5 @@
 import React from "react";
-import { MathJax, MathJaxContext } from "better-react-mathjax";
+import {MathJaxContext } from "better-react-mathjax";
 import "./binaryadd.css";
 
 export default function About() {

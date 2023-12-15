@@ -12,13 +12,8 @@ export default function DigitalLogic() {
           <div className="flex justify-center pt-10">
             <a
               href="/digital-logic/binary-add"
-              className="inline-flex text-navy bg-white py-4 px-9 hover:text-binarydark hover:underline text-lg rounded shadow-md hover:shadow-md mr-10">
-              Binary Addition/Subtraction
-            </a>
-            <a
-              href="#projects"
-              className="inline-flex text-navy bg-white py-4 px-9 hover:text-darkgreen hover:underline text-lg rounded shadow-md hover:shadow-md">
-              K-Map Calculator
+              className="inline-flex text-navy bg-white py-4 px-9 hover:text-binarydark hover:underline text-lg rounded shadow-md hover:shadow-md">
+              Binary Addition
             </a>
           </div>
         </div>

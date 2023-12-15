@@ -7,7 +7,7 @@
   
   .binaryadd ::selection {
     background-color: #08090f;
-    color: #00a1ff;
+    color: #00ff8f;
   }
 
   .columns-container {
@@ -40,5 +40,36 @@
   .horizontal-line {
     border-bottom: 2px solid #000; /* Change color and thickness as needed */
     width: 100%; /* Set the width to 100% to span the entire width of the container */
-    margin-top: 10px; /* Adjust the margin as needed */
+    margin-top: 5px; /* Adjust the margin as needed */
   }
+
+  .toggle-button:focus {
+    outline: none;
+  }
+  
+  .overflow-message {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+/* Style for the dropdowns */
+select {
+  appearance: none;
+  background-color: white;
+  border: 2px solid #08090f; /* Blue color */
+  border-radius: 8px; /* Rounded corners */
+  padding-left: 12px;
+  padding-right: 14px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 25px;
+  color: #08090f;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M3.5 4.5L6 7 8.5 4.5" fill="%2308090f" stroke="%2308090f" stroke-width="1"/></svg>'); /* Arrow SVG with color #08090f */  background-repeat: no-repeat;
+  background-position: right 7px center; /* Adjust the position as needed */
+}
+
+/* Style for the dropdown arrow */
+select::-ms-expand {
+  display: none;
+}

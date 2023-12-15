@@ -33,7 +33,8 @@ const ToggleButtonArray = ({ index, isSpecialButton, onChange }) => {
           className={`toggle-button ${binaryValue === 1 ? "active" : ""}`}
           onClick={handleButtonChange}
         >
-          <MathJax>{`\\[${binaryValue === 1 ? "-" : "+"}\\]`}</MathJax>
+          {/* Always render a plus sign in the special button */}
+          <MathJax>{`\\[+\\]`}</MathJax>
         </button>
       ) : (
         <ToggleButton value={binaryValue} onChange={handleButtonChange} />
@@ -42,13 +43,12 @@ const ToggleButtonArray = ({ index, isSpecialButton, onChange }) => {
   );
 };
 
-export default function BinaryAddSubtract() {
+export default function Addition() {
   const [selectedNumber, setSelectedNumber] = useState(5);
   const [binaryValuesTop, setBinaryValuesTop] = useState(Array(selectedNumber).fill(0));
   const [binaryValuesBottom, setBinaryValuesBottom] = useState(Array(selectedNumber).fill(0));
   const [binaryValueX, setBinaryValueX] = useState("0".repeat(selectedNumber));
   const [binaryValueY, setBinaryValueY] = useState("0".repeat(selectedNumber));
-  const [operation, setOperation] = useState("+"); // Default operation is addition
 
   useEffect(() => {
     // Calculate binary values for the top row (binaryValueX)
@@ -82,62 +82,22 @@ export default function BinaryAddSubtract() {
     setBinaryValuesBottom(newBinaryValuesBottom);
   };
 
-  const handleOperationChange = () => {
-    setOperation((prevOperation) => (prevOperation === "+" ? "-" : "+"));
+  // The main calculateBinaryResult function
+  const calculateBinaryResult = () => {
+    // Calculate binary values for the top row (binaryValueX)
+    const resultBinaryX = parseInt(binaryValuesTop.slice(0, selectedNumber).reverse().join(""), 2);
+
+    // Calculate binary values for the bottom row (binaryValueY)
+    const resultBinaryY = parseInt(binaryValuesBottom.slice(0, selectedNumber).reverse().join(""), 2);
+
+    // Perform binary addition
+    const resultBinary = resultBinaryX + resultBinaryY;
+
+    // Convert the result to binary representation
+    const binaryResult = resultBinary.toString(2).padStart(selectedNumber, '0').split('').map(Number);
+
+    return binaryResult;
   };
-
-// Function for binary addition
-const calculateBinaryAddition = () => {
-  const resultBinaryX = parseInt(binaryValueX, 2);
-  const resultBinaryY = parseInt(binaryValueY, 2);
-
-  // Perform binary addition
-  const resultBinary = resultBinaryX + resultBinaryY;
-
-  // Convert the result to binary representation
-  const binaryResult = resultBinary.toString(2).padStart(selectedNumber, '0').split('').map(Number);
-
-  return binaryResult;
-};
-
-// Function for binary subtraction using signed magnitude method
-const calculateBinarySubtraction = () => {
-  // Calculate 1's complement of Y
-  const onesComplementY = binaryValueY.split('').map(bit => (bit === '0' ? '1' : '0')).join('');
-
-  // Add 1 to the 1's complement to get 2's complement
-  const binaryOne = '0'.repeat(onesComplementY.length - 1) + '1';
-  const twosComplementY = (parseInt(onesComplementY, 2) + parseInt(binaryOne, 2)).toString(2).padStart(selectedNumber, '0').split('').map(Number);
-
-  // Add binary value X to the twos complement of binary value Y
-  const resultBinaryX = binaryValueX.split('').map(Number);
-  const resultBinaryY = twosComplementY;
-  const carry = resultBinaryX.reduceRight((carry, bit, index) => {
-    const sum = bit + resultBinaryY[index] + carry;
-    resultBinaryX[index] = sum % 2;
-    return sum > 1 ? 1 : 0;
-  }, 0);
-
-  // Handle overflow
-  if (carry) {
-    // Overflow occurred, handle as needed (e.g., wrap around)
-    console.warn('Overflow occurred during binary addition.');
-  }
-
-  return resultBinaryX;
-};
-
-
-
-// The main calculateBinaryResult function
-const calculateBinaryResult = () => {
-  // Determine which operation to perform
-  const resultBinary = operation === '+' ? calculateBinaryAddition() : calculateBinarySubtraction();
-
-  return resultBinary;
-};
-
-
 
   const generateColumns = () => {
     const columns = [];
@@ -147,7 +107,8 @@ const calculateBinaryResult = () => {
         {Array.from({ length: 2 }).map((_, index) => (
           <div key={index} className="empty-space"></div>
         ))}
-        <ToggleButtonArray index={-1} isSpecialButton={true} onChange={handleOperationChange} />
+        {/* Pass the onChange prop here */}
+        <ToggleButtonArray index={-1} isSpecialButton={true} onChange={() => { }} />
       </div>
     );
 
@@ -155,7 +116,9 @@ const calculateBinaryResult = () => {
       columns.push(
         <div key={i} className="column text-navy">
           <MathJax>{`\\[${Math.pow(2, i)}\\]`}</MathJax>
+          {/* Pass the onChange prop here */}
           <ToggleButtonArray index={i} onChange={(value) => handleBinaryChangeTop(i, value)} />
+          {/* Pass the onChange prop here */}
           <ToggleButtonArray index={i} onChange={(value) => handleBinaryChangeBottom(i, value)} />
         </div>
       );
@@ -170,7 +133,7 @@ const calculateBinaryResult = () => {
         <section className="bg-lightgray mt-20 body-font">
           <div className="container mx-auto px-5 py-10 text-center lg:px-40">
             <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-14 text-navy">
-              Binary +/- Calculator
+              Binary Addition Calculator
             </h1>
             <div className="flex flex-col w-full items-center">
               <div className="flex items-center text-2xl text-navy">
@@ -192,22 +155,22 @@ const calculateBinaryResult = () => {
                   <MathJax>{`\\[2^{n - 1} = 2^{${selectedNumber} - 1} = 2^{${selectedNumber - 1}} = ${Math.pow(2, selectedNumber - 1)}\\]`}</MathJax>
                 </div>
               </div>
-              <div>
-                <p>Click a tile to toggle between 0 and 1, and click the "+" to toggle between +/-!</p>
+              <div className="text-xl">
+                Click a tile in the the binary addition below to toggle between 0 and 1! If the result has an extra bit on the far left, that means there was <a href="https://en.wikipedia.org/wiki/Integer_overflow" className="text-binarydark underline" target="_blank" rel="noopener noreferrer">
+                  overflow</a>. This basically means there was a carry-out from the last (furthest left) column.
               </div>
               <div className="flex mt-4 columns-container">{generateColumns()}</div>
               <div className="horizontal-line" style={{ width: `${(selectedNumber + 1) * 75}px` }}></div>
               {/* Display the result row */}
               <div className="result-row">
-                <div className="column text-navy ml-35">
+                <div className="column text-navy text-center">
                   <MathJax>{`\\[\\qquad\\quad \\ \\ \\ \\ ${calculateBinaryResult().join(' \\quad \\ \\ \\text{      }')}\\]`}</MathJax>
                 </div>
               </div>
               {/* Display binary values X and Y */}
               <div className="result-row">
-                <div className="mt-40 ml-35">
+                <div className="mt-10 mb-20 text-xl text-center">
                   <p>{`First binary number: ${binaryValueX}, Second binary number: ${binaryValueY}`}</p>
-                  <p>{`Operation: ${operation}`}</p>
                 </div>
               </div>
             </div>

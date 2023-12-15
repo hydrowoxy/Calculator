@@ -23,8 +23,11 @@ export default function Navbar() {
           <a href="#Discrete" className="mr-5 hover:bg-lightgray rounded mt-4 md:mt-0 px-2 py-1 hover:text-pink">
             Discrete Math
           </a>
-          <a href="#Tex" className="mr-5 hover:bg-lightgray rounded mt-4 md:mt-0 px-2 py-1 hover:text-pink">
-            LaTeX Editor
+          <a href="#DigitalLogic" className="mr-5 hover:bg-lightgray rounded mt-4 md:mt-0 px-2 py-1 hover:text-pink">
+            Digital Logic
+          </a>
+          <a href="#Misc" className="mr-5 hover:bg-lightgray rounded mt-4 md:mt-0 px-2 py-1 hover:text-pink">
+            Miscellaneous
           </a>
         </nav>
         <a

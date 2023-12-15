@@ -10,11 +10,8 @@ export default function Misc() {
             Miscellaneous
           </h1>
           <div className="flex justify-center pt-10 pb-20">
-            <a
-              href="/misc/tex"
-              className="inline-flex text-navy bg-white py-4 px-9 hover:text-texlight hover:underline text-lg rounded shadow-md hover:shadow-md"
-            >
-              Basic LaTeX Editor
+            <a href="/misc/tex" className="inline-flex text-navy bg-white py-4 px-9 hover:text-texlight text-lg rounded shadow-md hover:shadow-none border border-transparent">
+            Basic LaTeX Editor
             </a>
           </div>
         </div>

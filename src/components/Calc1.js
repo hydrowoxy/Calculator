@@ -10,10 +10,7 @@ export default function Calc1() {
             Calculus I
           </h1>
           <div className="flex justify-center pt-10">
-            <a
-              href="/calc-1/integral-calculator"
-              className="inline-flex text-navy bg-white py-4 px-9 hover:text-integraldark hover:underline text-lg rounded shadow-md hover:shadow-md"
-            >
+            <a href="/calc-1/integral-calculator" className="inline-flex text-navy bg-white py-4 px-9 hover:text-integraldark text-lg rounded shadow-md hover:shadow-none border border-transparent">
               Integral Calculator
             </a>
           </div>

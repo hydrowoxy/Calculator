@@ -10,10 +10,8 @@ export default function DigitalLogic() {
             Digital Logic
           </h1>
           <div className="flex justify-center pt-10">
-            <a
-              href="/digital-logic/binary-add"
-              className="inline-flex text-navy bg-white py-4 px-9 hover:text-binarydark hover:underline text-lg rounded shadow-md hover:shadow-md">
-              Binary Addition
+            <a href="/digital-logic/binary-add" className="inline-flex text-navy bg-white py-4 px-9 hover:text-binarydark text-lg rounded shadow-md hover:shadow-none border border-transparent">
+            Binary Addition
             </a>
           </div>
         </div>

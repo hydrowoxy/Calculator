@@ -4,7 +4,6 @@ import "./integral.css";
 
 export default function Input() {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
-
     const [variable, setVariable] = useState("x");
     const [lowerBound, setLowerBound] = useState("");
     const [upperBound, setUpperBound] = useState("");
@@ -166,12 +165,12 @@ export default function Input() {
 
                     {/* Additional Section - Display Integral Expression */}
                     <div className="text-center">
-            <h1 className="sm:text-2xl text-3xl font-medium text-center title-font mt-10 mb-4 text-navy">
-              Integral Expression
-            </h1>
-          </div>
+                        <h1 className="sm:text-2xl text-3xl font-medium text-center title-font mt-10 mb-4 text-navy">
+                            Integral Expression
+                        </h1>
+                    </div>
+                </div>
+            </section>
         </div>
-      </section>
-    </div>
-  );
+    );
 }

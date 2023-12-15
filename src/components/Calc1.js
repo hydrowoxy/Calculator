@@ -7,7 +7,7 @@ export default function Calc1() {
       <div className="container px-5 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full">
           <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-8 mt-10 text-navy">
-            Calculus 1
+            Calculus I
           </h1>
           <div className="flex justify-center pt-10">
             <a

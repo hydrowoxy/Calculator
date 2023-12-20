@@ -9,14 +9,14 @@ export default function About() {
         <section className="bg-lightgray mt-20 body-font">
           <div className="container px-5 py-10 mx-auto text-center lg:px-40">
             <div className="flex flex-col w-full">
-              <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-20 text-navy">
+              <h1 className="bold-left-header">
                 About This Page
               </h1>
-              <h1 className="sm:text-7xl text-3xl font-medium title-font gradient-text">
+              <h1 className="title-teal">
                 Binary Addition Calculator
               </h1>
-              <p className="text-lg text-navy mt-7 mb-10 leading-relaxed">
-                <span className="text-2xl">
+              <p className="description">
+                <span>
                   This can be used to add two \(n\)-bit binary numbers.
                 </span>
               </p>

@@ -77,8 +77,8 @@ export default function Editor() {
               </h1>
 
               {/* Input field for LaTeX code */}
-              <p className="text-lg text-navy text-left mt-5 mb-4 ml-1 leading-relaxed">
-                <span className="text-2xl">
+              <p className="text-left description">
+                <span>
                   Enter LaTeX code...
                 </span>
               </p>

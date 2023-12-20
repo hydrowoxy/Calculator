@@ -10,6 +10,7 @@
     "@mui/icons-material": "^5.14.9",
     "@mui/lab": "^5.0.0-alpha.145",
     "better-react-mathjax": "^2.0.3",
+    "craco": "^0.0.3",
     "html-to-image": "^1.11.11",
     "mathjax": "^3.2.2",
     "mathjs": "^12.2.0",

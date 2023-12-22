@@ -1,6 +1,6 @@
 const text = [
     "Some calculators for various math and computer science courses.",
-    "Also, some other helpful tools."
+    "Also, some other (hopefully) helpful tools."
 ];
 
 const typingSpeed = 50; // Adjust the typing speed (milliseconds per character)

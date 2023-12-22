@@ -1,47 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
-import "./binaryadd.css";
-
-const ToggleButton = ({ value, onChange }) => {
-  const handleClick = () => {
-    const newValue = value === 0 ? 1 : 0;
-    onChange(newValue);
-  };
-
-  return (
-    <div className="toggle-button-container">
-      <button className={`toggle-button ${value === 1 ? "active" : ""}`} onClick={handleClick}>
-        {value === 1 ? "1" : "0"}
-      </button>
-    </div>
-  );
-};
-
-const ToggleButtonArray = ({ index, isSpecialButton, onChange }) => {
-  const [binaryValue, setBinaryValue] = useState(0);
-
-  const handleButtonChange = () => {
-    const newValue = binaryValue === 0 ? 1 : 0;
-    setBinaryValue(newValue);
-    onChange(newValue);
-  };
-
-  return (
-    <div className={`toggle-button-array ${isSpecialButton ? "special" : ""}`}>
-      {isSpecialButton ? (
-        <button
-          className={`toggle-button ${binaryValue === 1 ? "active" : ""}`}
-          onClick={handleButtonChange}
-        >
-          {/* Always render a plus sign in the special button */}
-          <MathJax>{`\\[+\\]`}</MathJax>
-        </button>
-      ) : (
-        <ToggleButton value={binaryValue} onChange={handleButtonChange} />
-      )}
-    </div>
-  );
-};
+import ToggleButtonArray from "./ToggleButtonArray";
 
 export default function Addition() {
   const [selectedNumber, setSelectedNumber] = useState(5);
@@ -108,7 +67,7 @@ export default function Addition() {
           <div key={index} className="empty-space"></div>
         ))}
         {/* Pass the onChange prop here */}
-        <ToggleButtonArray index={-1} isSpecialButton={true} onChange={() => { }} />
+        <ToggleButtonArray index={-1} isSpecialButton={true} onChange={() => {}} />
       </div>
     );
 
@@ -140,11 +99,7 @@ export default function Addition() {
                 <label htmlFor="numberInput" className="mr-2">
                   <MathJax>{`\\[\\text{The number of bits in each number, } n =\\]`}</MathJax>
                 </label>
-                <select
-                  id="numberInput"
-                  value={selectedNumber}
-                  onChange={handleNumberChange}
-                >
+                <select id="numberInput" value={selectedNumber} onChange={handleNumberChange}>
                   {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                     <option key={num} value={num}>
                       {num}
@@ -152,27 +107,35 @@ export default function Addition() {
                   ))}
                 </select>
                 <div className="text-left text-2xl ml-10 text-navy">
-                  <MathJax>{`\\[2^{n - 1} = 2^{${selectedNumber} - 1} = 2^{${selectedNumber - 1}} = ${Math.pow(2, selectedNumber - 1)}\\]`}</MathJax>
+                  <MathJax>{`\\[2^{n - 1} = 2^{${selectedNumber} - 1} = 2^{${selectedNumber - 1}} = ${Math.pow(
+                    2,
+                    selectedNumber - 1
+                  )}\\]`}</MathJax>
                 </div>
               </div>
-              <div className="text-xl">
-                Click a tile in the the binary addition below to toggle between 0 and 1! If the result has an extra bit on the far left, that means there was <a href="https://en.wikipedia.org/wiki/Integer_overflow" className="text-binarydark underline" target="_blank" rel="noopener noreferrer">
-                  overflow</a>. This basically means there was a carry-out from the last (furthest left) column.
+              <div className="sub-description">
+                Click a tile in the binary addition below to toggle between 0 and 1! If the result has an extra bit on the far left, that means there was{" "}
+                <a
+                  href="https://en.wikipedia.org/wiki/Integer_overflow"
+                  className="text-binarydark underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  overflow
+                </a>
+                . This basically means there was a carry-out from the last (furthest left) column.
               </div>
+
               <div className="flex mt-4 columns-container">{generateColumns()}</div>
               <div className="horizontal-line" style={{ width: `${(selectedNumber + 1) * 75}px` }}></div>
               {/* Display the result row */}
-              <div className="result-row">
-                <div className="column text-navy text-center">
-                  <MathJax>{`\\[\\qquad\\quad \\ \\ \\ \\ ${calculateBinaryResult().join(' \\quad \\ \\ \\text{      }')}\\]`}</MathJax>
+                <div className="column text-navy text-centers">
+                  <MathJax>{`\\[\\qquad \\ \\ ${calculateBinaryResult().join('\\quad ')}\\]`}</MathJax>
                 </div>
-              </div>
               {/* Display binary values X and Y */}
-              <div className="result-row">
-                <div className="mt-10 mb-20 text-xl text-center">
-                  <p>{`First binary number: ${binaryValueX}, Second binary number: ${binaryValueY}`}</p>
+                <div className="sub-description">
+                  <p>{`The first binary number is: ${binaryValueX} and the second binary number is: ${binaryValueY}`}</p>
                 </div>
-              </div>
             </div>
           </div>
         </section>

@@ -5,7 +5,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 
 import Calc1 from "./components/Calc1";
-import IntegralCalculator from "./calc1f/IntegralCalculator";
+import IntegralCalculator from "./calculus-one/IntegralCalculator";
 
 import Calc2 from "./components/Calc2";
 

@@ -15,21 +15,21 @@ export const buttonData = {
         { id: 'geq', latex: '\\geq', icon: '\\[\\geq\\]' },
         { id: 'exp', latex: 'a^{b}', icon: '\\[a^{b}\\]' },
         { id: 'exp', latex: 'a_{b}', icon: '\\[a_{b}\\]' },
-        { id: 'pm', latex: '\\pm', icon: '\\[\\pm\\]' }, // Plus-minus
-        { id: 'mp', latex: '\\mp', icon: '\\[\\mp\\]' }, // Minus-plus
+        { id: 'pm', latex: '\\pm', icon: '\\[\\pm\\]' }, 
+        { id: 'mp', latex: '\\mp', icon: '\\[\\mp\\]' }, 
         { id: 'times', latex: '\\times', icon: '\\[\\times\\]' },
         { id: 'div', latex: '\\div', icon: '\\[\\div\\]' },
-        { id: 'pmatrix', latex: '\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}', icon: '\\[\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}\\]' }, // Matrix
+        { id: 'pmatrix', latex: '\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}', icon: '\\[\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}\\]' }, 
         { id: 'sqrt', latex: '\\sqrt{x}', icon: '\\[\\sqrt{x}\\]' },
-        { id: 'nroot', latex: '\\sqrt[n]{x}', icon: '\\[\\sqrt[n]{x}\\]' }, // nth root
-        { id: 'infty', latex: '\\infty', icon: '\\[\\infty\\]' }, // Infinity
-        { id: 'percent', latex: '\\%', icon: '\\[\\%\\]' }, // Percent
-        { id: 'parallel', latex: '\\parallel', icon: '\\[\\parallel\\]' }, // Parallel
-        { id: 'perp', latex: '\\perp', icon: '\\[\\perp\\]' }, // Perpendicular
+        { id: 'nroot', latex: '\\sqrt[n]{x}', icon: '\\[\\sqrt[n]{x}\\]' }, 
+        { id: 'infty', latex: '\\infty', icon: '\\[\\infty\\]' }, 
+        { id: 'percent', latex: '\\%', icon: '\\[\\%\\]' }, 
+        { id: 'parallel', latex: '\\parallel', icon: '\\[\\parallel\\]' }, 
+        { id: 'perp', latex: '\\perp', icon: '\\[\\perp\\]' }, 
     ],
     calculus: [
         { id: 'sum', latex: '\\sum', icon: '\\[\\sum\\]' },
-        { id: 'sum_n_1_to_infty', latex: '\\sum_{n=1}^\\infty', icon: '\\[\\sum_{n=1}^\\infty\\]' }, // Sum from n=1 to infinity
+        { id: 'sum_n_1_to_infty', latex: '\\sum_{n=1}^\\infty', icon: '\\[\\sum_{n=1}^\\infty\\]' }, 
         { id: 'prod', latex: '\\prod', icon: '\\[\\prod\\]' },
         { id: 'lim', latex: '\\lim', icon: '\\[\\lim\\]' },
         { id: 'partial', latex: '\\partial', icon: '\\[\\partial\\]' },
@@ -51,16 +51,16 @@ export const buttonData = {
         { id: 'i', latex: 'i', icon: '\\[i\\]' },
         { id: 'e', latex: 'e', icon: '\\[e\\]' },
         { id: 'int', latex: '\\int', icon: '\\[\\int\\]' },
-        { id: 'oint', latex: '\\oint', icon: '\\[\\oint\\]' }, // Closed integral
-        { id: 'iint', latex: '\\iint', icon: '\\[\\iint\\]' }, // Double integral
-        { id: 'iiint', latex: '\\iiint', icon: '\\[\\iiint\\]' }, // Triple integral
-        { id: 'idotsint', latex: '\\idotsint', icon: '\\[\\idotsint\\]' }, // Iterated integral
+        { id: 'oint', latex: '\\oint', icon: '\\[\\oint\\]' }, 
+        { id: 'iint', latex: '\\iint', icon: '\\[\\iint\\]' }, 
+        { id: 'iiint', latex: '\\iiint', icon: '\\[\\iiint\\]' }, 
+        { id: 'idotsint', latex: '\\idotsint', icon: '\\[\\idotsint\\]' }, 
         { id: 'int_{a}^{b}', latex: '\\int_{a}^{b}', icon: '\\[\\int_{a}^{b}\\]' },
-        { id: 'iint_{D}', latex: '\\iint_{D}', icon: '\\[\\iint_{D}\\]' }, // Double integral over a region
-        { id: 'iiint_{D}', latex: '\\iiint_{D}', icon: '\\[\\iiint_{D}\\]' }, // Triple integral over a region
-        { id: 'int_{-infty}^{infty}', latex: '\\int_{-\\infty}^{\\infty}', icon: '\\[\\int_{-\\infty}^{\\infty}\\]' }, // Improper integral from -infinity to infinity
-        { id: 'int_{-infty}^{a}', latex: '\\int_{-\\infty}^{a}', icon: '\\[\\int_{-\\infty}^{a}\\]' }, // Improper integral from -infinity to a
-        { id: 'int_{a}^{infty}', latex: '\\int_{a}^{\\infty}', icon: '\\[\\int_{a}^{\\infty}\\]' }, // Improper integral from a to infinity
+        { id: 'iint_{D}', latex: '\\iint_{D}', icon: '\\[\\iint_{D}\\]' }, 
+        { id: 'iiint_{D}', latex: '\\iiint_{D}', icon: '\\[\\iiint_{D}\\]' }, 
+        { id: 'int_{-infty}^{infty}', latex: '\\int_{-\\infty}^{\\infty}', icon: '\\[\\int_{-\\infty}^{\\infty}\\]' },
+        { id: 'int_{-infty}^{a}', latex: '\\int_{-\\infty}^{a}', icon: '\\[\\int_{-\\infty}^{a}\\]' }, 
+        { id: 'int_{a}^{infty}', latex: '\\int_{a}^{\\infty}', icon: '\\[\\int_{a}^{\\infty}\\]' }, 
     ],
     arrows: [
         { id: 'rightarrow', latex: '\\rightarrow', icon: '\\[\\rightarrow\\]' },
@@ -114,11 +114,11 @@ export const buttonData = {
         { id: 'cot', latex: '\\cot(x)', icon: '\\[\\cot(x)\\]' },
         { id: 'sec', latex: '\\sec(x)', icon: '\\[\\sec(x)\\]' },
         { id: 'csc', latex: '\\csc(x)', icon: '\\[\\csc(x)\\]' },
-        { id: 'exp', latex: 'e^{x}', icon: '\\[e^{x}\\]' }, // Exponential function
+        { id: 'exp', latex: 'e^{x}', icon: '\\[e^{x}\\]' }, 
         { id: 'exp', latex: '2^{x}', icon: '\\[2^{x}\\]' },
-        { id: 'ln', latex: '\\ln(x)', icon: '\\[\\ln(x)\\]' }, // Natural logarithm
-        { id: 'log_{b}', latex: '\\log_{b}(x)', icon: '\\[\\log_{b}(x)\\]' }, // Logarithm with base 'b'
-        { id: 'log', latex: '\\log(x)', icon: '\\[\\log(x)\\]' }, // Logarithm
+        { id: 'ln', latex: '\\ln(x)', icon: '\\[\\ln(x)\\]' }, 
+        { id: 'log_{b}', latex: '\\log_{b}(x)', icon: '\\[\\log_{b}(x)\\]' },
+        { id: 'log', latex: '\\log(x)', icon: '\\[\\log(x)\\]' }, 
         { id: 'arcsin', latex: '\\sin^{-1}(x)', icon: '\\[\\sin^{-1}(x)\\]' },
         { id: 'arccos', latex: '\\arccos^{-1}(x)', icon: '\\[\\cos^{-1}(x)\\]' },
         { id: 'arctan', latex: '\\arctan^{-1}(x)', icon: '\\[\\tan^{-1}(x)\\]' },
@@ -129,13 +129,13 @@ export const buttonData = {
 
     ],
     fonts: [
-        { id: 'mathbf', latex: '\\mathbf{x}', icon: '\\[\\mathbf{x}\\]' }, // Bold math
-        { id: 'mathit', latex: '\\mathit{x}', icon: '\\[\\mathit{x}\\]' }, // Italic math
-        { id: 'mathrm', latex: '\\mathrm{x}', icon: '\\[\\mathrm{x}\\]' }, // Roman math
-        { id: 'mathbb', latex: '\\mathbb{R}', icon: '\\[\\mathbb{R}\\]' }, // Blackboard bold
-        { id: 'mathcal', latex: '\\mathcal{A}', icon: '\\[\\mathcal{A}\\]' }, // Calligraphic
-        { id: 'mathfrak', latex: '\\mathfrak{A}', icon: '\\[\\mathfrak{A}\\]' }, // Fraktur
-        { id: 'mathtt', latex: '\\mathtt{x}', icon: '\\[\\mathtt{x}\\]' }, // Typewriter
+        { id: 'mathbf', latex: '\\mathbf{x}', icon: '\\[\\mathbf{x}\\]' }, 
+        { id: 'mathit', latex: '\\mathit{x}', icon: '\\[\\mathit{x}\\]' }, 
+        { id: 'mathrm', latex: '\\mathrm{x}', icon: '\\[\\mathrm{x}\\]' }, 
+        { id: 'mathbb', latex: '\\mathbb{R}', icon: '\\[\\mathbb{R}\\]' }, 
+        { id: 'mathcal', latex: '\\mathcal{A}', icon: '\\[\\mathcal{A}\\]' }, 
+        { id: 'mathfrak', latex: '\\mathfrak{A}', icon: '\\[\\mathfrak{A}\\]' }, 
+        { id: 'mathtt', latex: '\\mathtt{x}', icon: '\\[\\mathtt{x}\\]' },
     ],
     discrete: [
         { id: 'and', latex: '\\wedge', icon: '\\[\\wedge\\]' },
@@ -160,16 +160,16 @@ export const buttonData = {
         { id: 'emptyset', latex: '\\emptyset', icon: '\\[\\emptyset\\]' },
     ],
     formulas: [
-        { id: 'quadratic', latex: 'x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}', icon: '\\[x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\]' }, // Quadratic formula
-        { id: 'pythagorean', latex: 'c = \\sqrt{a^2 + b^2}', icon: '\\[c = \\sqrt{a^2 + b^2}\\]' }, // Pythagorean theorem
-        { id: 'slope', latex: 'm = \\frac{y_2 - y_1}{x_2 - x_1}', icon: '\\[m = \\frac{y_2 - y_1}{x_2 - x_1}\\]' }, // Slope formula
-        { id: 'distance', latex: 'd = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}', icon: '\\[d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\\]' }, // Distance formula
-        { id: 'area', latex: 'A = \\frac{1}{2}bh', icon: '\\[A = \\frac{1}{2}bh\\]' }, // Area of a triangle
-        { id: 'volume', latex: 'V = lwh', icon: '\\[V = lwh\\]' }, // Volume of a rectangular prism
-        { id: 'cosine', latex: '\\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta', icon: '\\[\\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta\\]' }, // Double-angle cosine identity
-        { id: 'sine', latex: '\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta', icon: '\\[\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta\\]' }, // Double-angle sine identity
-        { id: 'circle', latex: 'A = \\pi r^2', icon: '\\[A = \\pi r^2\\]' }, // Area of a 
-        { id: 'quadratic-vertex', latex: 'y = a(x - h)^2 + k', icon: '\\[y = a(x - h)^2 + k\\]' }, // Quadratic function in vertex form
+        { id: 'quadratic', latex: 'x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}', icon: '\\[x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\]' }, 
+        { id: 'pythagorean', latex: 'c = \\sqrt{a^2 + b^2}', icon: '\\[c = \\sqrt{a^2 + b^2}\\]' }, 
+        { id: 'slope', latex: 'm = \\frac{y_2 - y_1}{x_2 - x_1}', icon: '\\[m = \\frac{y_2 - y_1}{x_2 - x_1}\\]' }, 
+        { id: 'distance', latex: 'd = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}', icon: '\\[d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\\]' }, 
+        { id: 'area', latex: 'A = \\frac{1}{2}bh', icon: '\\[A = \\frac{1}{2}bh\\]' }, 
+        { id: 'volume', latex: 'V = lwh', icon: '\\[V = lwh\\]' }, 
+        { id: 'cosine', latex: '\\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta', icon: '\\[\\cos(2\\theta) = \\cos^2\\theta - \\sin^2\\theta\\]' }, 
+        { id: 'sine', latex: '\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta', icon: '\\[\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta\\]' }, 
+        { id: 'circle', latex: 'A = \\pi r^2', icon: '\\[A = \\pi r^2\\]' }, 
+        { id: 'quadratic-vertex', latex: 'y = a(x - h)^2 + k', icon: '\\[y = a(x - h)^2 + k\\]' }, 
     ],
 
 };

@@ -32,21 +32,19 @@ export default function About() {
     <section id="projects" className="bg-lightgray mt-20 body-font">
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full mb-20">
-        <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-20 text-navy">
+        <h1 className="bold-left-header">
             About This Site
           </h1>
-        <h1 className="sm:text-7xl text-3xl font-medium title-font mb-5 gradient-text">
+        <h1 className="title-pinkblue">
           Assorted Calculators
         </h1>
         <h1 className="sm:text-1xl text-3xl font-medium title-font mb-5 text-black">
             <span className="main-text typing-text"></span>
           </h1>
-          <p className="text-lg text-navy mt-10 leading-relaxed">
-            <span className="text-2xl">
+          <p className="description">
               Some calculators for various math, computer science, and software engineering courses. 
               Also, some other miscellaneous tools that may be helpful.
               The "How do these work?" button at the top right will take you to some information about how these were made.
-            </span>
           </p>
           </div>
       </div>

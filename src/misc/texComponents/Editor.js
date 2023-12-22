@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import "./tex.css";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { buttonData } from "./buttonData";
 import { toPng } from 'html-to-image';
@@ -69,20 +68,16 @@ export default function Editor() {
   return (
     <MathJaxContext version={3}>
       <div className="tex">
+
         <section className="bg-lightgray mt-0 body-font">
+
           <div className="container px-5 mx-auto text-center lg:px-40">
             <div className="flex flex-col w-full mb-20">
-              <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-8 mt-10 text-navy">
-                Basic LaTeX Editor
-              </h1>
 
+              <h1 className="bold-left-header">Basic LaTeX Editor</h1>
               {/* Input field for LaTeX code */}
-              <p className="text-lg text-navy text-left mt-5 mb-4 ml-1 leading-relaxed">
-                <span className="text-2xl">
-                  Enter LaTeX code...
-                </span>
-              </p>
-              <div className="text-left flex items-center text-2xl">
+              <p className="text-left description">Enter LaTeX code...</p>
+              <div className="text-left sub-description">
                 <input
                   type="text"
                   id="latexCode"
@@ -98,7 +93,7 @@ export default function Editor() {
                 {tabData.map((tab) => (
                   <button
                     key={tab.id}
-                    className={`bg-white text-md text-navy px-4 py-2 rounded-md ${activeTab === tab.id ? 'bg-texlight text-white' : ''}`}
+                    className={`bg-white text-md text-navy px-4 py-2 rounded-md ${activeTab === tab.id ? 'bg-texlight' : ''}`}
                     onClick={() => handleTabChange(tab.id)}
                   >
                     {tab.title}
@@ -108,6 +103,7 @@ export default function Editor() {
 
               {/* Buttons for inserting symbols based on the active tab */}
               <div className="flex justify-center text-center px-4">
+                
                 {/* Buttons for inserting symbols based on the active tab */}
                 <div className="flex flex-wrap space-x-4 mb-4 mt-4">
                   {tabData.map((tab) => (
@@ -150,9 +146,12 @@ export default function Editor() {
               >
                 Download as PNG
               </button>
+
             </div>
           </div>
+          
         </section>
+
       </div>
     </MathJaxContext>
   );

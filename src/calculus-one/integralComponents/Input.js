@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 
-import "./integral.css";
-
 export default function Input() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const [variable, setVariable] = useState("x");
@@ -70,34 +68,29 @@ export default function Input() {
     setIntegralExpression(integralExpression);
   }, [variable, lowerBound, upperBound, mathFunction]);
 
-  const handleCalculateIntegral = () => {
-    // Implement the logic to calculate the integral if needed
-    console.log("Calculating Integral...");
-  };
-
   return (
     <MathJaxContext version={3}>
       <div className="integral">
         <section className="bg-lightgray mt-20 body-font">
           <div className="container px-5 mx-auto text-center lg:px-40">
-            <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-4 text-navy">
+            <h1 className="bold-left-header">
               Input
             </h1>
             <div className="grid grid-cols-2 gap-4 w-full mb-10">
               <div className="text-left">
-                <h1 className="sm:text-2xl text-3xl font-medium text-left title-font mt-10 mb-4 text-navy">
+                <h1 className="description">
                   Specifications...
                 </h1>
 
                 <div className="mb-4">
-                  <label htmlFor="variable" className="mr-2 text-lg text-navy">
+                  <label htmlFor="variable" className="sub-description mr-4">
                     Variable:
                   </label>
                   <select
                     id="variable"
                     value={variable}
                     onChange={handleVariableChange}
-                    className="border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:border-integraldark focus:ring-2 focus:ring-integraldark"
+                    className="border border-gray-300 rounded-md mb-6 px-2 py-1 focus:outline-none focus:border-integraldark focus:ring-2 focus:ring-integraldark"
                   >
                     {Array.from(alphabet).map((letter) => (
                       <option key={letter} value={letter.toLowerCase()}>
@@ -108,7 +101,7 @@ export default function Input() {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="lowerBound" className="mr-2 text-lg text-navy">
+                  <label htmlFor="lowerBound" className="sub-description mr-4">
                     Lower Bound:
                   </label>
                   <input
@@ -117,21 +110,21 @@ export default function Input() {
                     value={lowerBound}
                     onChange={handleLowerBoundChange}
                     placeholder="From..."
-                    className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-integraldark focus:ring-2 focus:ring-integraldark"
+                    className="border border-gray-300 rounded-md px-4 py-2 sub-description focus:outline-none focus:border-integraldark focus:ring-2 focus:ring-integraldark"
                   />
-                  <button onClick={() => setBoundToInfinity("lower")} className="ml-2 mr-2">
+                  <button onClick={() => setBoundToInfinity("lower")} className="ml-2 mr-2 button">
                     <MathJax>{"\\[+\\infty\\]"}</MathJax>
                   </button>
-                  <button onClick={() => setBoundToNegInfinity("lower")} className="mr-2">
+                  <button onClick={() => setBoundToNegInfinity("lower")} className="mr-2 button">
                     <MathJax>{"\\[-\\infty\\]"}</MathJax>
                   </button>
-                  <button onClick={() => handleClearBound("lower")} className="mr-2">
+                  <button onClick={() => handleClearBound("lower")} className="mr-2 button">
                     Clear
                   </button>
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="upperBound" className="mr-2 text-lg text-navy">
+                  <label htmlFor="upperBound" className="sub-description mr-4">
                     Upper Bound:
                   </label>
                   <input
@@ -140,26 +133,26 @@ export default function Input() {
                     value={upperBound}
                     onChange={handleUpperBoundChange}
                     placeholder="To..."
-                    className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-integraldark focus:ring-2 focus:ring-integraldark"
+                    className="border border-gray-300 rounded-md px-4 py-2 sub-description focus:outline-none focus:border-integraldark focus:ring-2 focus:ring-integraldark"
                   />
-                  <button onClick={() => setBoundToInfinity("upper")} className="ml-2 mr-2">
+                  <button onClick={() => setBoundToInfinity("upper")} className="ml-2 mr-2 button">
                     <MathJax>{"\\[+\\infty\\]"}</MathJax>
                   </button>
-                  <button onClick={() => setBoundToNegInfinity("upper")} className="mr-2">
+                  <button onClick={() => setBoundToNegInfinity("upper")} className="mr-2 button">
                     <MathJax>{"\\[-\\infty\\]"}</MathJax>
                   </button>
-                  <button onClick={() => handleClearBound("upper")} className="mr-2">
+                  <button onClick={() => handleClearBound("upper")} className="mr-2 button">
                     Clear
                   </button>
                 </div>
               </div>
 
               <div className="text-left">
-                <h1 className="sm:text-2xl text-3xl font-medium text-left title-font mt-10 mb-4 text-navy">
+                <h1 className="description">
                   Take the integral of...
                 </h1>
                 <div className="mb-4">
-                  <label htmlFor="mathFunction" className="mr-2 text-lg text-navy">
+                  <label htmlFor="mathFunction" className="sub-description mr-4">
                     Function to integrate:
                   </label>
                   <input
@@ -168,18 +161,18 @@ export default function Input() {
                     value={mathFunction}
                     onChange={handleMathFunctionChange}
                     placeholder="Enter function..."
-                    className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-integraldark focus:ring-2 focus:ring-integraldark w-full"
+                    className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none sub-description focus:border-integraldark focus:ring-2 focus:ring-integraldark w-full"
                   />
                 </div>
               </div>
             </div>
-            <p>
+            <p className="sub-description">
               Variable: {variable}, Lower Bound: {lowerBound}, Upper Bound: {upperBound},
               Mathematical Expression: {mathFunction}
             </p>
 
             <div className="text-center text-4xl text-navy">
-              <h1 className="text-3xl font-medium text-center title-font mt-10 mb-20 text-navy">
+              <h1 className="bold-left-header">
                 Integral Expression
               </h1>
               <MathJax>{`\\[${integralExpression}\\]`}</MathJax>

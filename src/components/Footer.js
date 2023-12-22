@@ -7,7 +7,6 @@ export default function Footer() {
     <section id="Footer" className="bg-white mt-0 body-font">
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <p>Made by Salma Baig | Last updated 2023</p>
-        <p>Contact me! Email: []</p>
         </div>
     </section>
   );

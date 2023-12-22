@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
-import "./binaryadd.css";
-import ToggleButtonArray from "./ToggleButtonArray"; // Import the new component
+import ToggleButtonArray from "./ToggleButtonArray";
 
 export default function Addition() {
   const [selectedNumber, setSelectedNumber] = useState(5);
@@ -114,7 +113,7 @@ export default function Addition() {
                   )}\\]`}</MathJax>
                 </div>
               </div>
-              <div className="text-xl">
+              <div className="sub-description">
                 Click a tile in the binary addition below to toggle between 0 and 1! If the result has an extra bit on the far left, that means there was{" "}
                 <a
                   href="https://en.wikipedia.org/wiki/Integer_overflow"
@@ -126,20 +125,17 @@ export default function Addition() {
                 </a>
                 . This basically means there was a carry-out from the last (furthest left) column.
               </div>
+
               <div className="flex mt-4 columns-container">{generateColumns()}</div>
               <div className="horizontal-line" style={{ width: `${(selectedNumber + 1) * 75}px` }}></div>
               {/* Display the result row */}
-              <div className="result-row">
-                <div className="column text-navy text-center">
-                  <MathJax>{`\\[\\qquad\\quad \\ \\ \\ \\ ${calculateBinaryResult().join(' \\quad \\ \\ \\text{      }')}\\]`}</MathJax>
+                <div className="column text-navy text-centers">
+                  <MathJax>{`\\[\\qquad \\ \\ ${calculateBinaryResult().join('\\quad ')}\\]`}</MathJax>
                 </div>
-              </div>
               {/* Display binary values X and Y */}
-              <div className="result-row">
-                <div className="mt-10 mb-20 text-xl text-center">
-                  <p>{`First binary number: ${binaryValueX}, Second binary number: ${binaryValueY}`}</p>
+                <div className="sub-description">
+                  <p>{`The first binary number is: ${binaryValueX} and the second binary number is: ${binaryValueY}`}</p>
                 </div>
-              </div>
             </div>
           </div>
         </section>

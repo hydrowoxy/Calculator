@@ -4,7 +4,7 @@ import Editor from "./texComponents/Editor";
 
 export default function Tex() {
     return (
-        <main className="text-gray-400 bg-lightgray body-font">
+        <main className="main">
             <About />
             <Editor />
         </main>

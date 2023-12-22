@@ -1,5 +1,4 @@
 import React from "react";
-import "./integral.css";
 
 export default function Output() {
 

@@ -6,11 +6,11 @@ export default function Calc1() {
     <section id="Calc1" className="bg-lightgray body-font ">
       <div className="container px-5 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full">
-          <h1 className="sm:text-3xl text-3xl font-medium text-left title-font mb-8 mt-10 text-navy">
+          <h1 className="bold-left-header">
             Calculus I
           </h1>
           <div className="flex justify-center pt-10">
-            <a href="/calc-1/integral-calculator" className="inline-flex text-navy bg-white py-4 px-9 hover:text-integraldark text-lg rounded shadow-md hover:shadow-none border border-transparent">
+            <a href="/calc-1/integral-calculator" className="hover:text-integraldark landing-button">
               Integral Calculator
             </a>
           </div>

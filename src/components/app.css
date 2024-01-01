@@ -4,6 +4,22 @@
   color: #90a4fa;
 }
 
+select {
+  appearance: none;
+  background-color: white;
+  border: 2px solid #08090f; 
+  border-radius: 8px; 
+  padding-left: 12px;
+  padding-right: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 25px;
+  color: #08090f;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M3.5 4.5L6 7 8.5 4.5" fill="%2308090f" stroke="%2308090f" stroke-width="1"/></svg>'); /* Arrow SVG with color #08090f */  background-repeat: no-repeat;
+  background-position: right 4px center; 
+}
+
 body {
   background-color: #f8f8fb;
 }
@@ -57,7 +73,6 @@ body {
   padding-right: 40px; 
 }
 
-
 .toggle-button-container {
   display: flex;
   flex-direction: column;
@@ -84,22 +99,6 @@ body {
   outline: none;
 }
 
-.binaryadd select {
-appearance: none;
-background-color: white;
-border: 2px solid #08090f; 
-border-radius: 8px; 
-padding-left: 12px;
-padding-right: 20px;
-padding-top: 2px;
-padding-bottom: 2px;
-font-size: 25px;
-color: #08090f;
-cursor: pointer;
-background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M3.5 4.5L6 7 8.5 4.5" fill="%2308090f" stroke="%2308090f" stroke-width="1"/></svg>'); /* Arrow SVG with color #08090f */  background-repeat: no-repeat;
-background-position: right 4px center; 
-}
-
 .binaryadd select::-ms-expand {
 display: none;
 }
@@ -108,20 +107,4 @@ display: none;
 .integral ::selection {
   background-color: #08090f;
   color: #fe8dc6;
-}
-
-.integral select {
-  appearance: none;
-  background-color: white;
-  border: 2px solid #08090f; 
-  border-radius: 8px; 
-  padding-left: 12px;
-  padding-right: 20px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  font-size: 25px;
-  color: #08090f;
-  cursor: pointer;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M3.5 4.5L6 7 8.5 4.5" fill="%2308090f" stroke="%2308090f" stroke-width="1"/></svg>'); /* Arrow SVG with color #08090f */  background-repeat: no-repeat;
-  background-position: right 4px center; 
 }

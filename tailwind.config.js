@@ -1,6 +1,6 @@
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false, 
   theme: {
     extend: {
       colors:{
@@ -70,6 +70,21 @@ module.exports = {
           'margin-top': '1.75rem',
           'margin-bottom': '2.5rem',
           'line-height': '1.625',
+        },
+        '.landing-button': {
+          fontSize: '1.4rem',
+          color: '#001f3f',
+          marginTop: '1.75rem',
+          marginBottom: '2.5rem',
+          lineHeight: '1.625',
+          display: 'inline-flex',
+          backgroundColor: '#fff',
+          paddingTop: '1rem',
+          paddingBottom: '1rem',
+          paddingLeft: '2.25rem',
+          paddingRight: '2.25rem',
+          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+          rounded: 'lg',
         },
         '.title-pinkblue': {
           'font-size': '5.25rem', 

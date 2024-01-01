@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { buttonData } from "./buttonData";
+import Button from "./Button";
+import TabList from "./TabList";
 import { toPng } from 'html-to-image';
 
 const tabData = [
@@ -61,7 +63,7 @@ export default function Editor() {
       })
       .catch((error) => {
         console.error('Error generating PNG:', error);
-        window.alert('Error generating PNG. Please try again.'); 
+        window.alert('Error generating PNG. Please try again.');
       });
   };
 
@@ -88,44 +90,21 @@ export default function Editor() {
                 />
               </div>
 
-              {/* Tabs */}
-              <div className="justify-center mb-4 mt-10 flex space-x-4">
-                {tabData.map((tab) => (
-                  <button
-                    key={tab.id}
-                    className={`bg-white text-md text-navy px-4 py-2 rounded-md ${activeTab === tab.id ? 'bg-texlight' : ''}`}
-                    onClick={() => handleTabChange(tab.id)}
-                  >
-                    {tab.title}
-                  </button>
-                ))}
-              </div>
 
-              {/* Buttons for inserting symbols based on the active tab */}
-              <div className="flex justify-center text-center px-4">
-                
-                {/* Buttons for inserting symbols based on the active tab */}
-                <div className="flex flex-wrap space-x-4 mb-4 mt-4">
-                  {tabData.map((tab) => (
-                    activeTab === tab.id && tab.buttons && (
-                      tab.buttons.map((button, index) => (
-                        <React.Fragment key={button.id}>
-                          <button
-                            className={`bg-white ring-2 text-navy ring-gray-200 focus:outline-none focus:border-texdark focus:ring-2 focus:ring-texdark text-sm focus:text-texdark mt-4 mb-8 px-6 py-0 rounded-md`}
-                            onClick={() => handleButtonClick(button.latex)}
-                          >
-                            <div className="flex items-center justify-center" style={{ height: "100%" }}>
-                              <MathJax className="text-xl text-navy">{button.icon}</MathJax>
-                            </div>
-                          </button>
-                          {(index + 1) % 20 === 0 && <br />}
-                        </React.Fragment>
-                      ))
-                    )
-                  ))}
-                </div>
-              </div>
+              <TabList tabs={tabData} activeTab={activeTab} onTabChange={handleTabChange} />
 
+              <div className="flex flex-wrap space-x-4 mb-4 mt-4">
+                {tabData
+                  .filter((tab) => activeTab === tab.id && tab.buttons)
+                  .map((tab) =>
+                    tab.buttons.map((button, index) => (
+                      <React.Fragment key={button.id}>
+                        <Button latex={button.latex} icon={button.icon} onClick={() => handleButtonClick(button.latex)} />
+                        {(index + 1) % 20 === 0 && <br />}
+                      </React.Fragment>
+                    ))
+                  )}
+              </div>
 
               {/* Display the TeX with MathJax */}
               <div
@@ -149,7 +128,7 @@ export default function Editor() {
 
             </div>
           </div>
-          
+
         </section>
 
       </div>

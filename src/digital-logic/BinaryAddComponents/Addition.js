@@ -123,7 +123,8 @@ export default function Addition() {
                 >
                   overflow
                 </a>
-                . This basically means there was a carry-out from the last (furthest left) column.
+                . This basically means there was a carry-out from the last (furthest left) column. The very top row is not a part of the addition but instead
+                represents the base-2 number corresponding to each column to make it easy to convert to decimal and check your answers.
               </div>
 
               <div className="flex mt-4 columns-container">{generateColumns()}</div>

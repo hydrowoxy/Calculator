@@ -11,7 +11,7 @@ export default function About() {
                         <h1 className="title-pink">Integral Calculator</h1>
 
                         <p className="description">
-                                A calculator to calculate integrals. This uses the same computational process as{" "}
+                                A calculator to calculate integrals. This uses a very similar computational process to{" "}
                                 {" "}<a href="https://integral-calculator.com" className="text-integraldark underline" target="_blank" rel="noopener noreferrer">integral-calculator.com</a>.{" "}
                                 The dev was kind enough to share how it works, so I tried to make something similar for my own learning. Visit
                                 {" "}<a href="https://integral-calculator.com" className="text-integraldark underline" target="_blank" rel="noopener noreferrer">integral-calculator.com</a>!                        </p>

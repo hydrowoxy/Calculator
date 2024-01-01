@@ -5,7 +5,7 @@ const text = [
 
 const typingSpeed = 50; // Adjust the typing speed (milliseconds per character)
 const pauseDuration = 2000; // Adjust the pause duration between animations (milliseconds)
-const prefix = "| "; // Use a . as the prefix
+const prefix = "| "; // Use a | as the prefix
 const prefixColor = "#f8f8fb"; // Set the color for the prefix
 const textColor = "#3c3b3f"; // Set the color for the remaining text
 
